@@ -1,5 +1,5 @@
 # random_code
-It is simply a repository in which I put various small code that I have from the developer to solve problems of all kinds.
+This is just a simply repository in which I put various small pieces of code in many languages that I have created to solve problems of all kinds.
 ## Python
 **csv2prtg** <br>
 This Python 3.9 script allows you to retrieve elements from a CSV file and import them directly into PRTG using the REST API, based on an already created template object. <br>
