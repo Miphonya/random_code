@@ -1,6 +1,6 @@
 Sub Scanner()
 
-    sPreviousSalle = ""
+    sPreviousItem = ""
   ' Make sure to change de défault Line.
     iDefaultLigne = 5
     For i = 2 To 1000
@@ -12,16 +12,16 @@ Sub Scanner()
             Exit For
         End If
         
-        If sSalle <> sPreviousSalle Then
+        If sSalle <> sPreviousItem Then
             
-            If sPreviousSalle <> "" Then
+            If sPreviousItem <> "" Then
                 
-                data_to_text_file (sPreviousSalle)
+                data_to_text_file (sPreviousItem)
                    ' WARNING ! If you need to scan more than 50 line, change the value "50" to your value
             Range("K" & iDefaultLigne & ":L" & iDefaultLigne + 50).ClearContents
             End If
             
-            sPreviousSalle = sSalle
+            sPreviousItem = sSalle
             iDestLine = iDefaultLigne
         Else
             iDestLine = iDestLine + 1
@@ -32,7 +32,7 @@ Sub Scanner()
 
        Next i
     ' ---------------------- Attention, I use in the rest of the code this function ( https://github.com/Miphonya/random_code/vba/data2textfile.vba ) But you can delete what is underneath if you do not need it ----------------------
-       data_to_text_file (sPreviousSalle)
+       data_to_text_file (sPreviousItem)
     ' ----------------------      ----------------------      ----------------------
     MsgBox ("hey, I'm stopped to the line" & i)
     
